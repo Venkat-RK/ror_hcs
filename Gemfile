@@ -6,7 +6,13 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'mysql2'
+#gem 'pg', :require => 'pg'
 
+#http://wingdspur.com/2012/12/setup-oracle-database-connection-on-ubuntu-for-ruby-on-rails/
+#gem 'ruby-oci8', '~> 2.1.2'
+#gem 'activerecord-oracle_enhanced-adapter', '~> 1.4.1'
+gem "haml-rails"
 
 # Gems used only for assets and not required
 # in production environments by default.
