@@ -1,6 +1,11 @@
-%h venky welcome to index page
-%br
-= render 'html_erb'
-%br
-= render 'html_haml'
+%center{:align => "center"} Welcome 
+%br/
+%table{:align => "center", :width => "700"}
+  %tr
+    %td{:align => "left", :width => "100"}
+      = render 'html_erb'
+    %td{:align => "right"} 
+      = render 'html_haml'
+
+
 

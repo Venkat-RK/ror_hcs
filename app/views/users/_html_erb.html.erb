@@ -1,1 +1,18 @@
-<h>hi this html page </h>
+<h>Description: html.erb page</h></br>
+<p>Below form is connected to sqlite3</p>
+<%= form_for @user do |f| %>
+<%= f.label :email %>
+<%= f.text_field :email %>
+<%= f.hidden_field :db, :value => "development" %>
+<%= f.submit %>
+<%end%>
+<br></br>
+<%connect_to "sqlite3" %>
+<p>Database name: sqlite3</p>
+<p>Registred Emails:</p>
+<% unless users.blank?%>
+<% users.each do |u| %>
+<%=u.email%></br>
+<%end%>
+<%end%>
+<%reset_db%>

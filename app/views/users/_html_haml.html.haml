@@ -1,1 +1,16 @@
-%h this html_haml page
+%h Description: html.haml page
+%p Below form is connected to Mysql
+%br/
+= form_for @user do |f|
+  = f.label :email
+  = f.text_field :email
+  = f.hidden_field :db, :value => "mysql_development"
+  = f.submit
+%br/
+- connect_to "mysql_development"
+%p Database name: Mysql2 
+%p Registred Emails:
+- unless users.blank?
+  - users.each do |u|
+    = u.email
+- reset_db   

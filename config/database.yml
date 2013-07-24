@@ -10,7 +10,8 @@ development:
   pool: 5
   timeout: 5000
   
-#development:
+
+#pg_db:
 #  adapter: postgresql
 #  host: localhost
 #  database: ror_hcs_development
@@ -18,12 +19,12 @@ development:
 #  password: root
 #  port: 5432
 
-#development:
-#  database: ror_hcs_development
-#  adapter: mysql2
-#  username: root
-#  password: 
-#  port: 3306
+mysql_development:
+  database: ror_hcs_development
+  adapter: mysql2
+  username: root
+  password: 
+  port: 3306
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
