@@ -3,10 +3,15 @@
 %br/
 = form_for(@user, :remote => true)do |f|
   = f.label :email
+  = precede "*" do
+    %span 
   = f.text_field :email, :id => 'haml_user_email'
   = f.hidden_field :db, :value => "mysql_development"
+  %br 
   = f.submit 'Create User', :onclick => "return showValidations('haml_user_email')"
 %br/
+:plain
+  Note: this is about haml filter plain .. & ab0ve Email* is printed using helper method 'precede' provided by haml
 - connect_to "mysql_development"
 %p Database name: Mysql2
 %p Registred Emails:

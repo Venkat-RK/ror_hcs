@@ -4,3 +4,30 @@ $text_color: #000
 body
   background-color: $background_color
   color: $text_color
+
+@mixin table-base
+  th
+    text-align: center
+    font-weight: bold
+  td, th
+    padding: 2px
+
+@mixin left($dist)
+  float: left
+  margin-left: $dist
+
+#data
+  @include left(10px)
+  @include table-base
+  
+.error
+  border: 1px #f00
+  background: #fdd
+
+.error.intrusion
+  font-size: 1.3em
+  font-weight: bold
+
+.badError
+  @extend .error
+  border-width: 3px
