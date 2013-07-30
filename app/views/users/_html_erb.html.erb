@@ -1,18 +1,20 @@
 <h>Description: html.erb page</h></br>
 <p>Below form is connected to sqlite3</p>
-<%= form_for @user do |f| %>
+<%= form_for(@user, :remote => true) do |f| %>
 <%= f.label :email %>
-<%= f.text_field :email %>
+<%= f.text_field :email, :id => 'erb_user_email' %>
 <%= f.hidden_field :db, :value => "development" %>
-<%= f.submit %>
+<%= f.submit 'Create User', :onclick => "return showValidations('erb_user_email')" %>
 <%end%>
 <br></br>
 <%connect_to "sqlite3" %>
 <p>Database name: sqlite3</p>
 <p>Registred Emails:</p>
+<div id="erb_emails">
 <% unless users.blank?%>
 <% users.each do |u| %>
 <%=u.email%></br>
 <%end%>
 <%end%>
 <%reset_db%>
+</div>

@@ -1,16 +1,18 @@
 %h Description: html.haml page
 %p Below form is connected to Mysql
 %br/
-= form_for @user do |f|
+= form_for(@user, :remote => true)do |f|
   = f.label :email
-  = f.text_field :email
+  = f.text_field :email, :id => 'haml_user_email'
   = f.hidden_field :db, :value => "mysql_development"
-  = f.submit
+  = f.submit 'Create User', :onclick => "return showValidations('haml_user_email')"
 %br/
 - connect_to "mysql_development"
-%p Database name: Mysql2 
+%p Database name: Mysql2
 %p Registred Emails:
-- unless users.blank?
-  - users.each do |u|
-    = u.email
-- reset_db   
+#haml_emails
+  - unless users.blank?
+    - users.each do |u|
+      = u.email
+      %br/
+  - reset_db   
